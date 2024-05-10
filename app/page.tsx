@@ -3,7 +3,7 @@ import { CitySearchInput } from "./components/CitySearchInput";
 import { getWeatherData } from "./api/getWeatherData";
 import { WidgetHeader } from "./components/WidgetHeader";
 
-export default async function Home(params?: {
+export default async function Home(params: {
   searchParams: { city?: string };
 }) {
   let city;
