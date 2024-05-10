@@ -55,7 +55,7 @@ export default async function Home(params: {
           <li className="list-group-item">
             Wind:{" "}
             <b>
-              {windSpeed} m/s {windDegree} DEGREE
+              {windSpeed} m/s ({windDegree} DEGREE)
             </b>
           </li>
           <li className="list-group-item">
