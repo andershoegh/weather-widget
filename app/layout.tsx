@@ -26,7 +26,16 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body style={{ backgroundColor: "#FFF", backgroundImage: "none" }}>
+      <body
+        style={{
+          backgroundColor: "#FFF",
+          backgroundImage: "none",
+          display: "flex",
+          justifyContent: "center",
+          height: "100vh",
+          alignItems: "center",
+        }}
+      >
         {children}
       </body>
     </html>

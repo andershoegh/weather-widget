@@ -1,20 +1,18 @@
 import { redirect } from "next/navigation";
 
+async function setNewCity(formData: FormData) {
+  "use server";
+
+  const form = {
+    city: formData.get("city"),
+  };
+
+  if (!form.city) return;
+
+  redirect(`/?city=${encodeURIComponent(form.city.toString())}`);
+}
+
 export function CitySearchInput() {
-  async function setNewCity(formData: FormData) {
-    "use server";
-
-    const form = {
-      city: formData.get("city"),
-    };
-
-    console.log("SENDING: ", { city: form.city });
-
-    if (!form.city) return;
-
-    redirect(`/?city=${encodeURIComponent(form.city.toString())}`);
-  }
-
   return (
     <li className="list-group-item">
       <form className="form-inline" action={setNewCity}>
