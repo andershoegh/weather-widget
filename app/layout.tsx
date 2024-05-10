@@ -16,7 +16,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
+        <title>Weather widget</title>
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body style={{ backgroundColor: "#FFF", backgroundImage: "none" }}>
+        {children}
+      </body>
     </html>
   );
 }
