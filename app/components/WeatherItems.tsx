@@ -17,15 +17,15 @@ export const WeatherItems = async ({
   return (
     <>
       <li className="list-group-item">
-        Temperature: <b>{temperature}</b>
+        Temperature: <b>{temperature.toFixed(0)}&deg;C</b>
       </li>
       <li className="list-group-item">
-        Humidity: <b>{humidity}</b>
+        Humidity: <b>{humidity.toFixed(0)}</b>
       </li>
       <li className="list-group-item">
         Wind:{" "}
         <b>
-          {windSpeed.toFixed(1)} m/s - {degreesToDirection(windDegree)}
+          {windSpeed.toFixed(0)} m/s - {degreesToDirection(windDegree)}
         </b>
       </li>
     </>
