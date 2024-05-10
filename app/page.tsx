@@ -6,13 +6,7 @@ import { WidgetHeader } from "./components/WidgetHeader";
 export default async function Home(params: {
   searchParams: { city?: string };
 }) {
-  let city;
-
-  if (!params?.searchParams.city) {
-    city = "København";
-  } else {
-    city = params?.searchParams.city;
-  }
+  let city = params.searchParams.city || "Copenhagen";
 
   const weatherData = await getWeatherData(city);
 
