@@ -28,7 +28,7 @@ export default async function Home(params: {
         <WidgetHeader city={city} />
         <ul className="list-group">
           <WeatherItems weatherData={weatherData} city={city} />
-          <CitySearchInput />
+          <CitySearchInput key={city} />
         </ul>
       </div>
     </div>
