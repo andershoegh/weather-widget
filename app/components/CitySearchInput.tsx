@@ -25,7 +25,11 @@ export function CitySearchInput() {
             placeholder="City"
           />
         </div>
-        <button type="submit" className="btn btn-default">
+        <button
+          type="submit"
+          style={{ marginLeft: "4px" }}
+          className="btn btn-default"
+        >
           Search
         </button>
       </form>
