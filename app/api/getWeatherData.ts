@@ -21,7 +21,7 @@ export async function getWeatherData(
   const weatherData = await res.json();
 
   return {
-    humidity: weatherData.main.temp,
+    humidity: weatherData.main.humidity,
     temperature: weatherData.main.temp,
     windSpeed: weatherData.wind.speed,
     windDegree: weatherData.wind.deg,
