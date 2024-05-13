@@ -19,9 +19,9 @@ describe("WeatherItems", () => {
     const listItems = screen.getAllByRole("listitem");
 
     const expectedTextContent = [
-      "Temperature: 20",
+      "Temperature: 20°C",
       "Humidity: 20",
-      "Wind: 20.0 m/s - Nord",
+      "Wind: 20 m/s - Nord",
     ];
     listItems.forEach((item, idx) => {
       expect(item.textContent).toBe(expectedTextContent[idx]);
