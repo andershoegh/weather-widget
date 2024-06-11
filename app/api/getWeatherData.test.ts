@@ -18,7 +18,8 @@ describe("getWeatherData", () => {
     await getWeatherData("copenhagen");
 
     expect(fetchMock).toHaveBeenCalledWith(
-      "https://api.openweathermap.org/data/2.5/weather?q=copenhagen,dk&appid=166d00e26d3ff2c6149e89feccc5c59a&units=metric&lang={dk}"
+      "https://api.openweathermap.org/data/2.5/weather?q=copenhagen,dk&appid=166d00e26d3ff2c6149e89feccc5c59a&units=metric&lang={dk}",
+      { next: { revalidate: 1800 } }
     );
   });
 

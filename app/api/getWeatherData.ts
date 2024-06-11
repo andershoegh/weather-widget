@@ -7,7 +7,7 @@ export async function getWeatherData(city: string): Promise<WeatherAPIReponse> {
   const getWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityWithSpacesReplaced},dk&appid=${PUBLIC_API_KEY}&units=metric&lang={dk}`;
 
   try {
-    const res = await fetch(getWeatherURL);
+    const res = await fetch(getWeatherURL, { next: { revalidate: 1800 } });
 
     if (!res.ok) {
       // Send error to error monitoring service.
