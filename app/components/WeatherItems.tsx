@@ -1,18 +1,16 @@
 import React from "react";
 import { degreesToDirection } from "../utils/degreesToDirection";
-import { WeatherData } from "../api/getWeatherData";
+
 import { NoWeatherDataError } from "./NoWeatherDataError";
+import { WeatherData } from "../types/WeatherData";
 
 export const WeatherItems = async ({
   city,
   weatherData,
 }: {
   city: string;
-  weatherData?: WeatherData;
+  weatherData: WeatherData;
 }) => {
-  if (!weatherData) {
-    return <NoWeatherDataError city={city} />;
-  }
   const { humidity, temperature, windDegree, windSpeed } = weatherData;
   return (
     <>

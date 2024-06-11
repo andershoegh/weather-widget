@@ -2,6 +2,8 @@ import { WeatherItems } from "./components/WeatherItems";
 import { CitySearchInput } from "./components/CitySearchInput";
 import { getWeatherData } from "./api/getWeatherData";
 import { WidgetHeader } from "./components/WidgetHeader";
+import { isWeatherDataError } from "./types/WeatherData";
+import { NoWeatherDataError } from "./components/NoWeatherDataError";
 
 export default async function Home(params: {
   searchParams: { city?: string };
@@ -21,7 +23,12 @@ export default async function Home(params: {
       <div className="panel panel-info">
         <WidgetHeader city={city} />
         <ul className="list-group">
-          <WeatherItems weatherData={weatherData} city={city} />
+          {isWeatherDataError(weatherData) ? (
+            <NoWeatherDataError city={city} error={weatherData} />
+          ) : (
+            <WeatherItems weatherData={weatherData} city={city} />
+          )}
+
           <CitySearchInput key={city} />
         </ul>
       </div>
