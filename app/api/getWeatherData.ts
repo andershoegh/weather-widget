@@ -1,6 +1,6 @@
 import { WeatherAPIReponse } from "../types/WeatherData";
 
-const PUBLIC_API_KEY = "166d00e26d3ff2c6149e89feccc5c59a";
+const PUBLIC_API_KEY = process.env.WEATHER_API_KEY;
 
 export async function getWeatherData(city: string): Promise<WeatherAPIReponse> {
   const cityWithSpacesReplaced = city.replaceAll(" ", "+");
